@@ -47,7 +47,7 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
 }
 
 section h3 {
@@ -72,6 +72,14 @@ section h3 {
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.activity-card ul {
+  margin: 10px 0 0 20px;
+}
+
+.activity-card li {
+  margin-bottom: 10px;
 }
 
 .form-group {
@@ -106,6 +114,13 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 .message {

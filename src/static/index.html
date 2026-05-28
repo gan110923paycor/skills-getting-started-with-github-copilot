@@ -3,46 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
+    <title>Team Management Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <h1>Team Management</h1>
+      <h2>Dashboard and Member Details</h2>
     </header>
 
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+      <section>
+        <h3>Session</h3>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role">
+            <option value="member">Team Member (View Only)</option>
+            <option value="manager">Manager (Manage Teams)</option>
+          </select>
         </div>
+        <div class="form-group">
+          <label for="actor-email">User Email</label>
+          <input type="email" id="actor-email" value="manager@company.com" />
+        </div>
+        <button id="load-dashboard" type="button">Load Dashboard</button>
+        <p id="mode-message" class="info"></p>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+      <section>
+        <h3>Create Team (Managers)</h3>
+        <form id="create-team-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <label for="team-name">Team Name</label>
+            <input type="text" id="team-name" required />
           </div>
           <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
-            </select>
+            <label for="team-description">Description</label>
+            <input type="text" id="team-description" />
           </div>
-          <button type="submit">Sign Up</button>
+          <div class="form-group">
+            <label for="team-email">Team Email</label>
+            <input type="email" id="team-email" required />
+          </div>
+          <div class="form-group">
+            <label for="team-contact">Team Contact</label>
+            <input type="text" id="team-contact" />
+          </div>
+          <button type="submit">Create Team</button>
         </form>
-        <div id="message" class="hidden"></div>
+      </section>
+
+      <section>
+        <h3>Add Team Member (Managers)</h3>
+        <form id="create-member-form">
+          <div class="form-group">
+            <label for="member-team-id">Team</label>
+            <select id="member-team-id" required></select>
+          </div>
+          <div class="form-group">
+            <label for="member-name">Member Name</label>
+            <input type="text" id="member-name" required />
+          </div>
+          <div class="form-group">
+            <label for="member-title">Title</label>
+            <input type="text" id="member-title" />
+          </div>
+          <div class="form-group">
+            <label for="member-skills">Skills (comma separated)</label>
+            <input type="text" id="member-skills" />
+          </div>
+          <div class="form-group">
+            <label for="member-personal-email">Personal Email</label>
+            <input type="email" id="member-personal-email" required />
+          </div>
+          <div class="form-group">
+            <label for="member-personal-contact">Personal Contact</label>
+            <input type="text" id="member-personal-contact" />
+          </div>
+          <button type="submit">Add Member</button>
+        </form>
+      </section>
+
+      <section id="dashboard-container">
+        <h3>Manager Dashboard</h3>
+        <div id="dashboard-list">
+          <p>Load dashboard to view teams and members.</p>
+        </div>
       </section>
     </main>
 
+    <div id="message" class="hidden"></div>
+
     <footer>
-      <p>&copy; 2023 Mergington High School</p>
+      <p>&copy; 2026 Team Management App</p>
     </footer>
 
     <script src="app.js"></script>
